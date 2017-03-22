@@ -1,0 +1,31 @@
+<p id="notice"><%=notice %></p>
+
+<%=form_for(@contact, url: choose_new_or1_edit) do |f| %>
+  <%if @contact.errors.any? %>
+    <div id="error_explanation">
+     <%# バリデーションエラーの件数を表示します。%>
+     <h2><%=@contact.errors.count %>件のエラーがあります。</h2>
+     
+     
+     <ul>
+     <%# @contact.errorsは@contactをバリデーションした際のエラー情報です。
+     # full_messagesは複数のエラーメッセージを表します。%>
+     <% @contact.errors.full_messages.each do |msg| %>
+      <li><%=msg %></li>
+      <%end%>
+     </ul>
+    </div>
+   <%end%>
+  
+  <%=f.label :"お名前" %>
+  <%=f.text_field :name, class: 'form-control'%>
+  <br>
+  <%=f.label :"メールアドレス" %>
+  <%=f.text_field :email, class: 'form-control'%>
+  <br>
+  <%=f.label :"お問い合わせ内容" %>
+  <%=f.text_field :content, class: 'form-control' %>
+  <%=f.submit "お問い合わせを送信", class: 'btn btn-primary btn-block'%>
+<%end%>
+
+<%#=link_to "ブログ一覧画面に戻る", blogs_path %>
