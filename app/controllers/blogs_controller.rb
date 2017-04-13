@@ -9,6 +9,7 @@ class BlogsController < ApplicationController
   def new
     if params[:back]
       @blog = Blog.new(blogs_params)
+      @blog.user_id = current_user.id
     else
       @blog = Blog.new
     end
