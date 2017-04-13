@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true,class: "form-control" %>
   </div>
       
   <!-- 名前入力用のフィールドを追加 -->
@@ -23,12 +23,12 @@
   
   <div class="field">
     <%= f.label :current_password %> <br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.password_field :current_password, autocomplete: "off",class: "form-control" %>
   </div>
   
   <div class="field">
     <%= f.label :新パスワード %> <i>(変更ない場合は空欄)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off",class: "form-control" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> 文字以上</em>
@@ -37,7 +37,7 @@
 
   <div class="field">
     <%= f.label :新パスワード確認 %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control"%>
   </div>
 
   <div class="actions">
