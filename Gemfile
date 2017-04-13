@@ -43,8 +43,9 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'twitter-bootstrap-rails'
-gem 'jquery-turbolinks'
+  gem 'twitter-bootstrap-rails'
+  gem 'jquery-turbolinks'
 
-gem 'rails_12factor', group: :prodution
-gem 'devise'
+  gem 'rails_12factor', group: :prodution
+  gem 'devise'
+  gem 'faker'
