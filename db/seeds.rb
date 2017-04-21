@@ -5,12 +5,29 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# n = 1
+# while n <= 100
+#   Blog.create(
+#     title: "あああ",
+#     user_id: n
+#   )
+#   n = n + 1
+# end
+
+# num = 1
+# until num <= 100 do
+#   Blog.create(
+#   title:"あああ",
+#   user_id: num)
+#   num = num + 1
+# end
+
 n = 1
 while n <= 100
   Blog.create(
     title: "あああ",
+    content: "hoge",
     user_id: n
   )
   n = n + 1
 end
-
