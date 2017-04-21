@@ -16,3 +16,7 @@ Rails.application.routes.draw do
   end
   root 'top#index'
 end
+
+if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+end
