@@ -9,6 +9,6 @@ class Contactmailer < ApplicationMailer
     @contact = contact
 
     mail to: "puravida590@gmail.com",
-         subject:'【Achieve】お問い合わせありがとうございます。担当者よりご連絡いたします。'
+         subject:'【Achieve】お問い合わせありがありました。'
   end
 end
