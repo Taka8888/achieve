@@ -49,6 +49,7 @@ end
   gem 'rails_12factor', group: :prodution
   gem 'devise'
   gem 'faker'
+  gem 'rails_admin'
 
 
 group :development do
