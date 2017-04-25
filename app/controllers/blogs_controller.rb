@@ -4,6 +4,8 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
+    render json:@blogs
+    # binding.pry
   end
 
   def new
@@ -24,7 +26,7 @@ class BlogsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def confirm
     @blog = Blog.new(blogs_params)
     render :new if @blog.invalid?
