@@ -1,0 +1,6 @@
+<% @poems.each do |poem| %>
+  <%= poem.title %>
+  <%= poem.content %>
+  <%= poem.auther %>
+  <%=link_to "show", poem_path(poem) %>
+<% end %>
