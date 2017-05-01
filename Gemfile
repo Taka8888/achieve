@@ -32,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -54,8 +56,15 @@ end
   gem 'rails_admin'
   gem 'cancan'
   gem 'activeresource'
+  gem 'omniauth'
+  gem 'omniauth-twitter'
+  gem 'omniauth-facebook'
 
 group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
 end
+
+ #image uploader
+ gem 'carrierwave'
+ gem 'mini_magick'
