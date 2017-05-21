@@ -5,8 +5,8 @@
     <div id="error_explanation">
      <%# バリデーションエラーの件数を表示します。%>
      <h2><%=@contact.errors.count %>件のエラーがあります。</h2>
-     
-     
+
+
      <ul>
      <%# @contact.errorsは@contactをバリデーションした際のエラー情報です。
      # full_messagesは複数のエラーメッセージを表します。%>
@@ -16,7 +16,7 @@
      </ul>
     </div>
    <%end%>
-  
+
   <%=f.label :"お名前" %>
   <%=f.text_field :name, class: 'form-control'%>
   <br>
