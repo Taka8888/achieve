@@ -6,12 +6,10 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
 }
   #get 'blogs' =>'blogs#index'
-  resources :blogs, only:[:index, :new, :create, :edit, :update, :destroy]do
-    collection do
-      post :confirm
-    end
-  end
-
+  resources :blogs do
+  resources :comments
+  post :confirm, on: :collection
+end
   #get 'contacts' =>'contacts#contact'
   resources :contacts, only:[:new, :create]do
     collection do
