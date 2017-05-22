@@ -6,10 +6,13 @@
         <p class="left"><%= comment.content %></p>
         <% if current_user.id == comment.user.id %>
           <p class="right">
-            <%= link_to '', edit_blog_comment_path(blog, comment), class: "fa fa-pencil-square-o fa-lg" , method: :edit, remote: true %>
+            <%= link_to '', edit_blog_comment_path(blog, comment), class: "fa fa-pencil-square-o fa-lg" , method: :post, remote: true %>
           </p>
         <% end %>
       </li>
     <% end %>
   <% end %>
 </ul>
+
+
+#編集の仕方がわからない。
