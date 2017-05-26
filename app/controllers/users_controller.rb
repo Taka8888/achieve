@@ -8,4 +8,6 @@ class UsersController < ApplicationController
     @user_followed =@user.followed_users
     @user_follower =@user.followers
   end
+
+
 end

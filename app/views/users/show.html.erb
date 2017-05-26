@@ -3,8 +3,8 @@
 
   <h2>フォローしている</h2>
   <% @user_followed.each do |user| %>
-　　　　　　　  <div class="row">
-  　　　　　　<div class="profile_img">
+        <div class="row">
+       　<div class="image-size-adapt">
         <%= profile_img(user) %>
       　　</div>
         <%= user.name %>
@@ -17,11 +17,11 @@
   <h2>フォローワー</h2>
         <% @user_follower.each do |user| %>
         <div class="row">
-        <div class="profile_img">
+        <div class="image-size-adapt">
         <%= profile_img(user) %>
 　　　　　　　　　</div>
         <%= user.name %>
-        <%= user.email%>
+        <%= user.email%>s
 　</div>
 <% end %>
 　　　　　　　　　　　
