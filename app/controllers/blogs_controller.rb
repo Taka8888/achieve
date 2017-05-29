@@ -15,6 +15,8 @@ class BlogsController < ApplicationController
   def show
       @comment = @blog.comments.build
       @comments = @blog.comments
+        Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
+        # end
   end
 
   def new
@@ -26,7 +28,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.create(blogs_params)
+    @blog = Blog.new(blogs_params)
     @blog.user_id = current_user.id
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました！"
