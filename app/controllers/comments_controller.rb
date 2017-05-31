@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
       @comment = current_user.comments.build(comment_params)
       @blog = @comment.blog
       @notification = @comment.notifications.build(user_id: @blog.user.id )
-      end
 
       #クライアントからの要求に応じてレスポンスのフォーマットを変更します。
       respond_to do |format|
@@ -15,14 +14,14 @@ class CommentsController < ApplicationController
              format.js { render :index }
 
              unless @comment.blog.user_id == current_user.id
-               Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
-                 message: 'あなたの作成したブログにコメントが付きました'
+                 Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
+                   message: 'あなたの作成したブログにコメントが付きました'
+                 })
+               end
+               Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
+                 unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
                })
-             end
-             Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
-               unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
-             })
-             else
+              else
              format.html  { redirect_to blog_path(@blog), notice: 'コメントを入力してください。'}
          end
        end
@@ -51,4 +50,5 @@ class CommentsController < ApplicationController
      def comment_params
          params.require(:comment).permit(:blog_id, :content)
     end
+
 end
