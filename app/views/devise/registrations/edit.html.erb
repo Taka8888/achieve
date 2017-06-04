@@ -24,8 +24,9 @@
   </div>
 
   <% if @user.provider.blank? %>
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
   <% end %>
 
   <div class="field">
@@ -59,4 +60,3 @@
   <%= link_to "戻る", :back %>
   </div>
 </div>
-<% end %>
