@@ -17,10 +17,11 @@ class CommentsController < ApplicationController
                Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'comment_created', {
                  message: 'あなたの作成したブログにコメントが付きました'
                })
+               Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
+                 unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
+               })
              end
-             Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
-               unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
-             })
+
            else
           format.html  { redirect_to blog_path(@blog), notice: 'コメントを入力してください。'}
          end

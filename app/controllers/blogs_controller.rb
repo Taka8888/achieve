@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
   #showアクションを定義します。入力フォームと一覧を表示するためインスタンスを２つ生成します。
   def show
       @comment = @blog.comments.build
-      @comments = @blog.comments
+      @comments = @blog.comments.order(created_at: :asc)
         Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
         # end
   end
