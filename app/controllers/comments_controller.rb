@@ -2,10 +2,12 @@ class CommentsController < ApplicationController
    #コメントを保存、投稿するためのアクションです。
    def create
       #Blogをパラメータの値から探し出し、BlogにひもづくcommentsとしてBuildします。
+
       @comment = current_user.comments.build(comment_params)
       @blog = @comment.blog
+      if  @comment.blog.user_id != current_user.id
       @notification = @comment.notifications.build(user_id: @blog.user.id )
-
+    end 
       #クライアントからの要求に応じてレスポンスのフォーマットを変更します。
       respond_to do |format|
          if @comment.save

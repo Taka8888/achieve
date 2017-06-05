@@ -19,6 +19,7 @@
        alert(data.message);
      });
      channel.bind('notification_created', function(data) {
+       console.log(data.unread_counts);
        $('#unread_count').html(data.unread_counts);
      });
    </script>
