@@ -60,14 +60,14 @@ end
   gem 'omniauth-twitter'
   gem 'omniauth-facebook'
 
-group :development do
+ group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
-end
+ end
 
  #image uploader
- gem 'carrierwave'
- gem 'mini_magick'
+  gem 'carrierwave'
+  gem 'mini_magick'
   gem 'pusher'
   gem 'fog'
   gem 'dotenv-rails'
