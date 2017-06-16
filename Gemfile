@@ -77,7 +77,8 @@ end
   gem 'therubyracer', platforms: :ruby
 
   group :development, :test do
-
+    gem "rspec-rails"
+    gem "factory_girl_rails"
 
 
     gem 'capistrano', '3.6.0'
@@ -86,3 +87,11 @@ end
     gem 'capistrano-rbenv'
     gem 'capistrano3-unicorn'
   end
+
+
+group :test do
+    gem "capybara"
+    gem "database_cleaner"
+    gem "launchy"
+    gem "selenium-webdriver"
+end
