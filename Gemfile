@@ -40,8 +40,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
 
-  # Access an IRB console on exception pages or by using <%= console %>
-  gem 'web-console', '~> 2.0'
+
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -63,6 +62,8 @@ end
  group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
+  # Access an IRB console on exception pages or by using <%= console %>
+  gem 'web-console', '~> 2.0'
  end
 
  #image uploader
