@@ -7,7 +7,7 @@ describe Contact do
     expect(contact).to be_valid
   end
 
-  #タイトルがなければ無効であること
+  #名前、タイトルが規定文字を超えていたら無効であること
   it "is invalid name and email length more than 50 words" do
     contact = Contact.new(name: 'あああああああああああああああああああああああああああああああああああああああああああああああああああ５２', email: '５１aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@y.co' )
     expect(contact).not_to be_valid
