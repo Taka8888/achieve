@@ -32,9 +32,6 @@ gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'pry-rails'
-  gem 'better_errors'
   gem 'spring'
   gem "rspec-rails"
   gem "factory_girl_rails"
@@ -47,10 +44,14 @@ end
 
 
  group :development do
-  gem 'letter_opener_web'
-  gem 'dotenv-rails'
+   gem 'byebug'
+   gem 'pry-rails'
+   gem 'better_errors'
+   gem 'binding_of_caller'
+   gem 'letter_opener_web'
+   gem 'dotenv-rails'
   # Access an IRB console on exception pages or by using <%= console %>
-  gem 'web-console', '~> 2.0'
+   gem 'web-console', '~> 2.0'
  end
 
 group :test do
